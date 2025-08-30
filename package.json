@@ -1,0 +1,15 @@
+{
+  "name": "validatefiles",
+  "version": "1.0.0",
+  "description": "Projecto for validating the existance files",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "node index.js"
+  },
+  "author": "Osiris Alvarez",
+  "license": "MIT"
+}
