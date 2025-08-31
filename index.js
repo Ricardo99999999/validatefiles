@@ -4,7 +4,8 @@ const requiredFiles = [
   'README.md',
   'index.js',
   'package.json',
-  'prueba.txt'
+  'prueba.txt',
+  'src/prueba2.txt'
 ];
 
 let missing = [];
