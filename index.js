@@ -3,7 +3,8 @@ const fs = require('fs');
 const requiredFiles = [
   'README.md',
   'index.js',
-  'package.json'
+  'package.json',
+  'prueba.txt'
 ];
 
 let missing = [];
