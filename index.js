@@ -1,19 +1,18 @@
 const fs = require('fs');
 
-// Leemos el fichero con los nombres de los archivos
+// We read the file containing the filename
 const filesListPath = 'filesExistance.txt';
 
 if (!fs.existsSync(filesListPath)) {
-  console.error(`❌ No se encuentra el fichero ${filesListPath}`);
+  console.error(`File not found ${filesListPath}`);
   process.exit(1);
 }
 
-// Cargamos y limpiamos la lista
-//Works in sigle files and folders
+// Load and clean the list. Works in sigle files and folders
 const requiredFiles = fs.readFileSync(filesListPath, 'utf8')
-  .split('\n')                // dividimos por líneas
-  .map(line => line.trim())   // quitamos espacios
-  .filter(line => line !== '' && !line.startsWith('#')); // ignoramos vacías o comentarios
+  .split('\n')                // Split into lines
+  .map(line => line.trim())   // Trim spaces
+  .filter(line => line !== '' && !line.startsWith('#')); // Ignore empty lines or comments
 
 //If yo want use array instead of dynamic file
 /*const requiredFiles = [
@@ -33,9 +32,9 @@ for (const file of requiredFiles) {
 }
 
 if (missing.length > 0) {
-  console.error("❌ Faltan archivos obligatorios:", missing.join(', '));
-  process.exit(1); // ⚠️ Esto hace fallar la pipeline
+  console.error("Mandatory files are missing:", missing.join(', '));
+  process.exit(1); // Program or pipeline fails
 } else {
-  console.log("✅ Todos los archivos obligatorios existen.");
+  console.log("All mandatory files are present");
   process.exit(0);
 }
